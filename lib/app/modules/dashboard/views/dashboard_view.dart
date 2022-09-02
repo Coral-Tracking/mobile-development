@@ -1,4 +1,3 @@
-import 'package:coral/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -35,13 +34,7 @@ class DashboardView extends GetView<DashboardController> {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return AreaCard(
-                      redirect: () => Get.toNamed(
-                        Routes.DETAIL_AREA,
-                        arguments: controller.areas[index].areaId,
-                      ),
-                      areaName: controller.areas[index].areaName,
-                      location: controller.areas[index].areaLocation,
-                      markColor: controller.areas[index].areaMarkColor,
+                      model: controller.areas[index],
                     );
                   },
                   itemCount: controller.areas.length,

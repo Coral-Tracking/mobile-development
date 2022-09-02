@@ -1,23 +1,20 @@
+import 'package:coral/app/data/models/area_model.dart';
+import 'package:coral/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AreaCard extends StatelessWidget {
-  final String areaName;
-  final String markColor;
-  final String location;
-  final VoidCallback redirect;
+  final AreaModel model;
 
   const AreaCard({
     Key? key,
-    required this.redirect,
-    required this.areaName,
-    required this.location,
-    required this.markColor,
+    required this.model,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: redirect,
+      onTap: () => Get.toNamed(Routes.DETAIL_AREA, arguments: model),
       child: Card(
         margin: const EdgeInsets.all(20),
         elevation: 10,
@@ -38,7 +35,7 @@ class AreaCard extends StatelessWidget {
                     SizedBox(
                       height: 25,
                       child: Text(
-                        areaName,
+                        model.areaName,
                         style: const TextStyle(
                             color: Colors.white70,
                             fontSize: 20,
@@ -68,7 +65,10 @@ class AreaCard extends StatelessWidget {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Color(
-                              int.parse(markColor.substring(1, 7), radix: 16) +
+                              int.parse(
+                                    model.areaMarkColor.substring(1, 7),
+                                    radix: 16,
+                                  ) +
                                   0xFF000000,
                             ),
                           ),
@@ -84,7 +84,7 @@ class AreaCard extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(10),
                           child: Text(
-                            location,
+                            model.areaLocation,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
