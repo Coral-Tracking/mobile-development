@@ -9,6 +9,9 @@ abstract class Routes {
   static const ADD_AREA = _Paths.ADD_AREA;
   static const CORAL_CLASSIFICATION_RESULT = _Paths.CORAL_CLASSIFICATION_RESULT;
   static const MAPPING = _Paths.MAPPING;
+  static const CLASSIFICATION = _Paths.CLASSIFICATION;
+  static const OBJECT_DETECTION = _Paths.OBJECT_DETECTION;
+  static const PREVIEW_CAPTURE_IMAGE = _Paths.PREVIEW_CAPTURE_IMAGE;
 }
 
 abstract class _Paths {
@@ -19,4 +22,7 @@ abstract class _Paths {
   static const ADD_AREA = '/add-area';
   static const CORAL_CLASSIFICATION_RESULT = '/coral-classification-result';
   static const MAPPING = '/mapping';
+  static const CLASSIFICATION = '/classification';
+  static const OBJECT_DETECTION = '/object-detection';
+  static const PREVIEW_CAPTURE_IMAGE = '/preview-capture-image';
 }

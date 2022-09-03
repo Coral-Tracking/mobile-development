@@ -10,6 +10,8 @@ abstract class ApiServices {
 
   // coral
   static const POST_CORAL = "${HOST}coral";
+  static const GET_CORALS = "${HOST}corals";
 
   // upload file
+  static const UPLOAD_FILE = "${HOST}file";
 }

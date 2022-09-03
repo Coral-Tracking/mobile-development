@@ -1,7 +1,11 @@
+import 'package:coral/app/data/models/coral_model.dart';
 import 'package:flutter/material.dart';
 
 class PredictHistory extends StatelessWidget {
+  final CoralModel coralModel;
+
   const PredictHistory({
+    required this.coralModel,
     Key? key,
   }) : super(key: key);
 
@@ -19,8 +23,8 @@ class PredictHistory extends StatelessWidget {
                 // Column Image
                 Column(
                   children: [
-                    Image.asset(
-                      'assets/image/coral.jpg',
+                    Image.network(
+                      coralModel.imageUrl,
                       height: 100,
                     ),
                   ],
@@ -31,21 +35,22 @@ class PredictHistory extends StatelessWidget {
                     Column(
                       children: [
                         Row(
-                          children: const [
+                          children: [
                             Text(
-                              '    1 September 2022',
-                              style: TextStyle(
+                              // '    1 September 2022',
+                              '${coralModel.parsingDateTime().day}-${coralModel.parsingDateTime().month}-${coralModel.parsingDateTime().year}',
+                              style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
-                              '12:00:00',
-                              style:
-                                  TextStyle(fontSize: 12, color: Colors.black),
+                              '${coralModel.parsingDateTime().hour}:${coralModel.parsingDateTime().minute}',
+                              style: const TextStyle(
+                                  fontSize: 12, color: Colors.black),
                             ),
                           ],
                         ),
@@ -53,21 +58,21 @@ class PredictHistory extends StatelessWidget {
                           height: 10,
                         ),
                         Row(
-                          children: const [
-                            Text(
+                          children: [
+                            const Text(
                               '    Spesies        :',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
-                              'Acanthastrea',
-                              style:
-                                  TextStyle(fontSize: 12, color: Colors.black),
+                              coralModel.species,
+                              style: const TextStyle(
+                                  fontSize: 12, color: Colors.black),
                             ),
                           ],
                         ),
@@ -75,21 +80,21 @@ class PredictHistory extends StatelessWidget {
                           height: 10,
                         ),
                         Row(
-                          children: const [
-                            Text(
+                          children: [
+                            const Text(
                               '    Presentasi Kemiripan :',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
-                              '80%',
-                              style:
-                                  TextStyle(fontSize: 12, color: Colors.black),
+                              '${coralModel.percentage}%',
+                              style: const TextStyle(
+                                  fontSize: 12, color: Colors.black),
                             ),
                           ],
                         )

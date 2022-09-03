@@ -1,21 +1,32 @@
 import 'package:coral/app/data/models/area_model.dart';
 import 'package:coral/app/data/provider/api_services_provider.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class DashboardController extends GetxController with StateMixin {
   var getConnect = GetConnect();
-  var areas = <AreaModel>[];
+  var areas = <AreaModel>[].obs;
+  var refreshontroller = RefreshController();
 
   @override
   void onReady() {
+    refreshontroller.refreshCompleted();
     fetchAreas();
 
     super.onReady();
   }
 
+  void handleRefresh() async {
+    refreshontroller.requestRefresh();
+    fetchAreas();
+    refreshontroller.refreshCompleted();
+  }
+
   void fetchAreas() async {
     change(false, status: RxStatus.loading());
     var result = await getConnect.get(ApiServices.GET_AREAS);
+
+    areas.clear();
 
     for (var element in result.body["data"]) {
       areas.add(AreaModel.fromJson(element));

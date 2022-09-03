@@ -1,23 +1,54 @@
+import 'package:coral/app/data/provider/api_services_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
 
 class AddAreaController extends GetxController {
-  //TODO: Implement AddAreaController
+  final getConnect = GetConnect();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final areaNameController = TextEditingController();
+  final locationController = TextEditingController();
+  final colorTextController = TextEditingController();
+
+  var selectedColor = const Color(0xfff12ac3);
+
+  void handleChangeColor(Color color) {
+    colorTextController.text =
+        colorToHex(color, includeHashSign: true, enableAlpha: false);
+    refresh();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void handleSubmitButton() async {
+    if (isEmptyTextField()) return;
+
+    var response = await getConnect.post(
+      ApiServices.POST_AREA,
+      {
+        "areaName": areaNameController.text,
+        "location": locationController.text,
+        "markColor": colorTextController.text
+      },
+      contentType: "Application/json",
+    );
+
+    if (response.isOk) {
+      Get.snackbar("success", "success create area");
+    } else {
+      Get.snackbar("failed", "failed create area");
+    }
+
+    clearTextField();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  bool isEmptyTextField() {
+    return areaNameController.text.isEmpty ||
+        locationController.text.isEmpty ||
+        colorTextController.text.isEmpty;
   }
 
-  void increment() => count.value++;
+  void clearTextField() {
+    areaNameController.clear();
+    locationController.clear();
+    colorTextController.clear();
+  }
 }
