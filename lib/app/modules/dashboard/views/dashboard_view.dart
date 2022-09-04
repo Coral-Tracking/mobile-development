@@ -44,6 +44,11 @@ class DashboardView extends GetView<DashboardController> {
                     itemCount: controller.areas.length,
                   ),
                   onLoading: const CircularProgressIndicator(),
+                  onError: (error) => const Center(
+                    child: Text(
+                      "Server is not ready yet, please refresh the page",
+                    ),
+                  ),
                 )
               ],
             ),

@@ -6,8 +6,10 @@ class CoralModel {
   String longitude;
   String imageUrl;
   String createdAt;
+  String? markColor;
 
   CoralModel({
+    this.markColor,
     required this.id,
     required this.percentage,
     required this.createdAt,
@@ -26,6 +28,19 @@ class CoralModel {
       latitude: json["latitude"].toString(),
       longitude: json["longitude"].toString(),
       percentage: json["percentage"].toString(),
+    );
+  }
+
+  factory CoralModel.fromJsonCorals(Map<String, dynamic> json) {
+    return CoralModel(
+      id: json["_id"],
+      createdAt: json["createdAt"],
+      imageUrl: json["imageUrl"],
+      species: json["species"],
+      latitude: json["latitude"].toString(),
+      longitude: json["longitude"].toString(),
+      percentage: json["percentage"].toString(),
+      markColor: json["areaId"]["markColor"],
     );
   }
 

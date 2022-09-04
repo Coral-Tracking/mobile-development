@@ -25,11 +25,14 @@ class DashboardController extends GetxController with StateMixin {
   void fetchAreas() async {
     change(false, status: RxStatus.loading());
     var result = await getConnect.get(ApiServices.GET_AREAS);
-
     areas.clear();
 
-    for (var element in result.body["data"]) {
-      areas.add(AreaModel.fromJson(element));
+    try {
+      for (var element in result.body["data"]) {
+        areas.add(AreaModel.fromJson(element));
+      }
+    } catch (e) {
+      change(false, status: RxStatus.error());
     }
 
     change(false, status: RxStatus.success());
