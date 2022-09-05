@@ -1,8 +1,8 @@
 import 'package:coral/app/data/provider/api_services_provider.dart';
-import 'package:coral/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
+import 'package:coral/app/routes/app_pages.dart';
 
 class AddAreaController extends GetxController {
   final getConnect = GetConnect();
@@ -37,7 +37,6 @@ class AddAreaController extends GetxController {
     } else {
       Get.snackbar("failed", "failed create area");
     }
-
     clearTextField();
     Get.toNamed(Routes.HOME);
   }
