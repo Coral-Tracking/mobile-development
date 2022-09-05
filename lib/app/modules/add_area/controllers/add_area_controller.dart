@@ -38,8 +38,8 @@ class AddAreaController extends GetxController {
       Get.snackbar("failed", "failed create area");
     }
 
-    Get.toNamed(Routes.HOME);
     clearTextField();
+    Get.toNamed(Routes.HOME);
   }
 
   bool isEmptyTextField() {
