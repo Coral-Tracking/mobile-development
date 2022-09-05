@@ -48,6 +48,6 @@ class CoralClassificationResultController extends GetxController
   }
 
   void handleBackToDashboardButton() {
-    Get.offAllNamed(Routes.DASHBOARD);
+    Get.offAllNamed(Routes.HOME);
   }
 }
