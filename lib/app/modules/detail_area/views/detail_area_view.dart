@@ -39,21 +39,41 @@ class _DetailAreaViewState extends State<DetailAreaView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.blue),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          children: [
+            Column(
+              children: [
+                Text(
+                  "Detail Area",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Detail Informasi & Riwayat',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           const SizedBox(
-            height: 50,
-          ),
-          const Text(
-            'Detail Area',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          const Text('Detail Informasi & Riwayat'),
-          const SizedBox(
-            height: 10,
+            height: 20,
           ),
           AreaCard(model: controller.areaModel),
           Align(
