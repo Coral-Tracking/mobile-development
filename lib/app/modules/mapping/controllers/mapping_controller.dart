@@ -51,6 +51,10 @@ class MappingController extends GetxController with StateMixin {
                 ),
               ).hue,
             ),
+            infoWindow: InfoWindow(
+              title: "Area ${e.areaName}",
+              snippet: "Species ${e.species}",
+            ),
           ),
         )
         .toSet();

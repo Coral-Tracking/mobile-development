@@ -7,8 +7,10 @@ class CoralModel {
   String imageUrl;
   String createdAt;
   String? markColor;
+  String? areaName;
 
   CoralModel({
+    this.areaName,
     this.markColor,
     required this.id,
     required this.percentage,
@@ -41,6 +43,7 @@ class CoralModel {
       longitude: json["longitude"].toString(),
       percentage: json["percentage"].toString(),
       markColor: json["areaId"]["markColor"],
+      areaName: json["areaId"]["areaName"],
     );
   }
 
