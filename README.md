@@ -1,16 +1,18 @@
-# coral
+# Run on Computer:
 
-A new Flutter project.
+Prerequisites for running the app:
 
-## Getting Started
+- Git installed
+- Android Studio
+- Google Cloud Platform account
 
-This project is a starting point for a Flutter application.
+Steps:
+- Open Git Bash terminal
+- Type or input "git clone https://github.com/Coral-Tracking/mobile-development.git"
+- It will clone this repository to your local computer, after cloning process is finished you can open it using Android Studio
+- [Generate Google Maps API](https://developers.google.com/maps/get-started)
+- Copy your API key to AndroidManifest.xml in meta-data tag > android:value=<"YOUR_API_KEY">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run or Install on Android
+COMING SOON
