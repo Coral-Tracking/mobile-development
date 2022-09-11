@@ -100,7 +100,17 @@ class _DetailAreaViewState extends State<DetailAreaView>
       floatingActionButton: FloatingActionBubble(
         items: [
           Bubble(
-            title: "Classification",
+            title: "Edit Area",
+            iconColor: Colors.white,
+            bubbleColor: Colors.blue,
+            icon: Icons.edit,
+            titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
+            onPress: () {
+              
+            },
+          ),
+          Bubble(
+            title: "Klasifikasi",
             iconColor: Colors.white,
             bubbleColor: Colors.blue,
             icon: Icons.home,
@@ -112,7 +122,17 @@ class _DetailAreaViewState extends State<DetailAreaView>
             },
           ),
           Bubble(
-            title: "Object Detection",
+            title: "Hapus Area",
+            iconColor: Colors.white,
+            bubbleColor: Colors.blue,
+            icon: Icons.delete,
+            titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
+            onPress: () {
+              
+            },
+          ),
+          Bubble(
+            title: "Object Deteksi",
             iconColor: Colors.white,
             bubbleColor: Colors.blue,
             icon: Icons.home,
@@ -120,6 +140,16 @@ class _DetailAreaViewState extends State<DetailAreaView>
             onPress: () {
               Get.toNamed(Routes.OBJECT_DETECTION);
               _animationController.reverse();
+            },
+          ),
+          Bubble(
+            title: "Hapus Riwayat",
+            iconColor: Colors.white,
+            bubbleColor: Colors.blue,
+            icon: Icons.delete,
+            titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
+            onPress: () {
+              
             },
           ),
         ],

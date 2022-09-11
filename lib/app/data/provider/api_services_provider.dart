@@ -1,5 +1,5 @@
 abstract class ApiServices {
-  static const HOST = "https://coral-tracking.herokuapp.com/api/v1/";
+  static const HOST = "https://coral-tracking.et.r.appspot.com/api/v1/";
 
   // area
   static const POST_AREA = "${HOST}area";

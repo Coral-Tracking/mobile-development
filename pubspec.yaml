@@ -17,13 +17,20 @@ dependencies:
   dio: ^4.0.6
   geolocator: ^9.0.1
   google_maps_flutter: ^2.2.0
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter
-
+    
 flutter: 
   uses-material-design: true
   assets:
     - assets/image/
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/image/logo.png"
+
