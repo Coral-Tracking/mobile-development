@@ -48,7 +48,7 @@ class PreviewCaptureImageController extends GetxController with StateMixin {
     String predictedName = response.data["Name"];
     var arrPredicted = predictedName.split(" ");
 
-    coralName = arrPredicted[0] + arrPredicted[1];
+    coralName = "${arrPredicted[0]} ${arrPredicted[1]}";
     var rep1 = arrPredicted.last.replaceAll("(", "");
     var rep2 = rep1.replaceAll(")", "");
     var rep3 = rep2.replaceAll("%", "");

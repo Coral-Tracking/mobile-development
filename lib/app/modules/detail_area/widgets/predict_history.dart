@@ -16,92 +16,68 @@ class PredictHistory extends StatelessWidget {
       child: Card(
         margin: const EdgeInsets.only(bottom: 10),
         elevation: 10,
-        child: Column(
+        child: Row(
           children: [
-            Row(
+            // Column Image
+            Column(
               children: [
-                // Column Image
-                Column(
-                  children: [
-                    Image.network(
-                      coralModel.imageUrl,
-                      height: 100,
-                    ),
-                  ],
+                Image.network(
+                  coralModel.imageUrl,
+                  height: 100,
                 ),
-                Row(
-                  children: [
-                    // Column Text
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              // '    1 September 2022',
-                              '${coralModel.parsingDateTime().day}-${coralModel.parsingDateTime().month}-${coralModel.parsingDateTime().year}',
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              '${coralModel.parsingDateTime().hour}:${coralModel.parsingDateTime().minute}',
-                              style: const TextStyle(
-                                  fontSize: 12, color: Colors.black),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            const Text(
-                              '    Spesies        :',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              coralModel.species,
-                              style: const TextStyle(
-                                  fontSize: 12, color: Colors.black),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            const Text(
-                              '    Presentasi Kemiripan :',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              '${coralModel.percentage}%',
-                              style: const TextStyle(
-                                  fontSize: 12, color: Colors.black),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ],
-                )
+              ],
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            SizedBox(
+              width: 50,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Tanggal"),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text("Species"),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text("Akurasi")
+                ],
+              ),
+            ),
+            SizedBox(
+              width: 10,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(":"),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(":"),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(":")
+                ],
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${coralModel.parsingDateTime().day}-${coralModel.parsingDateTime().month}-${coralModel.parsingDateTime().year}',
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(coralModel.species),
+                SizedBox(
+                  height: 5,
+                ),
+                Text('${coralModel.percentage}%')
               ],
             ),
           ],

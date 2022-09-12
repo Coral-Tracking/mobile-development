@@ -47,7 +47,7 @@ class _DetailAreaViewState extends State<DetailAreaView>
         title: Row(
           children: [
             Column(
-              children: [
+              children: const [
                 Text(
                   "Detail Area",
                   style: TextStyle(
