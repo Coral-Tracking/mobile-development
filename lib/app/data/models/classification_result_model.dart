@@ -4,7 +4,7 @@ class ClassificationModel {
   File imageFile;
   String coralName;
   String accuracy;
-  int numberAccuracy;
+  double numberAccuracy;
   String areaId;
   String latitude;
   String longitude;

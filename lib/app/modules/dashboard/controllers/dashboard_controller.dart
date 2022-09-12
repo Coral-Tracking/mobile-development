@@ -6,14 +6,14 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 class DashboardController extends GetxController with StateMixin {
   var getConnect = GetConnect();
   var areas = <AreaModel>[].obs;
-  var refreshontroller = RefreshController();
+  late RefreshController refreshontroller = RefreshController();
 
-  @override
-  void onReady() {
-    refreshontroller.refreshCompleted();
+@override
+  void onInit() {
     fetchAreas();
+    refreshontroller.refreshCompleted();
 
-    super.onReady();
+    super.onInit();
   }
 
   void handleRefresh() async {

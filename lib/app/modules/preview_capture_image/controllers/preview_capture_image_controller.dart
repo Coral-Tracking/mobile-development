@@ -14,7 +14,7 @@ class PreviewCaptureImageController extends GetxController with StateMixin {
   final dioHttp = dio.Dio();
 
   var coralName = "";
-  int confidencePoint = 0;
+  double confidencePoint = 0.0;
   String confidencePercetage = "";
 
   @override
@@ -54,7 +54,7 @@ class PreviewCaptureImageController extends GetxController with StateMixin {
     var rep3 = rep2.replaceAll("%", "");
 
     confidencePercetage = rep2;
-    confidencePoint = int.parse(rep3);
+    confidencePoint = double.parse(rep3);
 
     var userPosition = await _determinePosition();
 

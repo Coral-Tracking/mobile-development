@@ -39,7 +39,7 @@ class AddAreaController extends GetxController {
     }
 
     clearTextField();
-    Get.toNamed(Routes.HOME);
+    Get.offAllNamed(Routes.HOME);
   }
 
   bool isEmptyTextField() {
